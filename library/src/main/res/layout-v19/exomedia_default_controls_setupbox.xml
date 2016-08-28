@@ -6,6 +6,7 @@
     tools:background="@android:color/black">
 
     <LinearLayout
+        android:id="@+id/exomedia_controls_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -170,7 +171,7 @@
                         android:nextFocusLeft="@id/exomedia_controls_previous_btn"
                         android:nextFocusRight="@+id/exomedia_controls_play_pause_btn"
                         android:src="@drawable/exomedia_ic_rewind_white"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription"
                         tools:visibility="visible" />
 
@@ -212,7 +213,7 @@
                         android:nextFocusLeft="@id/exomedia_controls_play_pause_btn"
                         android:nextFocusRight="@+id/exomedia_controls_next_btn"
                         android:src="@drawable/exomedia_ic_fast_forward_white"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription"
                         tools:visibility="visible" />
 
