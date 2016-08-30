@@ -39,7 +39,7 @@ public class VideoPlayerActivity extends Activity {
                 emVideoView.start();
             }
         });
-        emVideoView.setVideoURI(Uri.parse("http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"));
+        emVideoView.setVideoURI(Uri.parse("http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4"));
 
     }
 
