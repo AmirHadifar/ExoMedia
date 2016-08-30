@@ -25,6 +25,7 @@ import com.devbrackets.android.exomedia.util.TimeFormatUtil;
  * GitHub  : @AmirHadifar
  * Twitter : @AmirHadifar
  */
+
 public class VideoControllersSetupBox extends VideoControls {
 
     protected static final int FAST_FORWARD_REWIND_AMOUNT = 10000; //10 seconds
@@ -240,6 +241,7 @@ public class VideoControllersSetupBox extends VideoControls {
         loadingProgress.setVisibility(View.GONE);
 
         updatePlaybackState(videoView != null && videoView.isPlaying());
+
     }
 
     /**
@@ -299,6 +301,7 @@ public class VideoControllersSetupBox extends VideoControls {
         playPauseButton.setOnKeyListener(remoteKeyListener);
         rewindButton.setOnKeyListener(remoteKeyListener);
         fastForwardButton.setOnKeyListener(remoteKeyListener);
+        settingsButton.setOnKeyListener(remoteKeyListener);
     }
 
     /**

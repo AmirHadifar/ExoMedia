@@ -13,6 +13,7 @@
         android:layout_marginBottom="@dimen/exomedia_leanback_controls_bottom_margin"
         android:layout_marginLeft="@dimen/exomedia_leanback_controls_horizontal_margin"
         android:layout_marginRight="@dimen/exomedia_leanback_controls_horizontal_margin"
+        android:layoutDirection="ltr"
         android:orientation="vertical">
 
 
@@ -41,7 +42,6 @@
                     android:layout_toRightOf="@+id/exomedia_controls_current_time"
                     android:layout_toStartOf="@+id/exomedia_controls_end_time"
                     android:indeterminate="false"
-                    android:layoutDirection="ltr"
                     android:maxHeight="4dp"
                     android:minHeight="4dp"
                     android:progressDrawable="@drawable/stb_progress_horizontal"
