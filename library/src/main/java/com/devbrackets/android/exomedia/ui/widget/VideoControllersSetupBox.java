@@ -63,7 +63,7 @@ public class VideoControllersSetupBox extends VideoControls {
     @Override
     protected void setup(Context context) {
         super.setup(context);
-        internalListener = new LeanbackInternalListener();
+        internalListener = new StbInternalListener();
         registerForInput();
         setFocusable(true);
     }
@@ -511,7 +511,7 @@ public class VideoControllersSetupBox extends VideoControls {
         }
     }
 
-    protected class LeanbackInternalListener extends InternalListener {
+    protected class StbInternalListener extends InternalListener {
         @Override
         public boolean onFastForwardClicked() {
             if (videoView == null) {

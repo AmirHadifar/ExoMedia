@@ -18,6 +18,7 @@ package com.devbrackets.android.exomedia.util;
 
 import android.app.UiModeManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -81,7 +82,14 @@ public class DeviceUtil {
             UiModeManager uiManager = (UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE);
             return uiManager != null && uiManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
         }
+        return false;
+    }
 
+    public boolean isDeviceStb(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            final PackageManager pm = context.getPackageManager();
+            return pm.hasSystemFeature(PackageManager.FEATURE_TELEVISION);
+        }
         return false;
     }
 

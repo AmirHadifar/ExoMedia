@@ -18,4 +18,12 @@
     <color name="exomedia_black_transparent_30">#4c000000</color>
     <color name="exomedia_black_transparent_17">#22000000</color>
     <color name="exomedia_black_transparent_7">#12000000</color>
+
+    <color name="exomedia_white_transparent_90">#e1ffffff</color>
+    <color name="exomedia_white_transparent_60">#bfffffff</color>
+    <color name="exomedia_white_transparent_30">#5affffff</color>
+    <color name="exomedia_white_transparent_15">#26ffffff</color>
+    <color name="exomedia_white_transparent_5">#11ffffff</color>
+
+
 </resources>
