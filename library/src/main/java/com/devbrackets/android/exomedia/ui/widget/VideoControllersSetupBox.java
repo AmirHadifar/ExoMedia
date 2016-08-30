@@ -36,6 +36,7 @@ public class VideoControllersSetupBox extends VideoControls {
 
     protected ImageButton fastForwardButton;
     protected ImageButton rewindButton;
+    protected ImageButton settingsButton;
 
     protected Drawable defaultRewindDrawable;
     protected Drawable defaultFastForwardDrawable;
@@ -96,7 +97,7 @@ public class VideoControllersSetupBox extends VideoControls {
 
     @Override
     public void updateProgress(@IntRange(from = 0) long position, @IntRange(from = 0) long duration, @IntRange(from = 0, to = 100) int bufferPercent) {
-        progressBar.setSecondaryProgress((int) (progressBar.getMax() * ((float)bufferPercent / 100)));
+        progressBar.setSecondaryProgress((int) (progressBar.getMax() * ((float) bufferPercent / 100)));
         progressBar.setProgress((int) position);
         currentTime.setText(TimeFormatUtil.formatMs(position));
     }
@@ -164,6 +165,7 @@ public class VideoControllersSetupBox extends VideoControls {
         fastForwardButton = (ImageButton) findViewById(R.id.exomedia_controls_fast_forward_btn);
         rippleIndicator = (ImageView) findViewById(R.id.exomedia_controls_leanback_ripple);
         controlsParent = (ViewGroup) findViewById(R.id.exomedia_controls_parent);
+        settingsButton = (ImageButton) findViewById(R.id.exomedia_controls_settings_btn);
     }
 
     @Override
@@ -183,11 +185,10 @@ public class VideoControllersSetupBox extends VideoControls {
         });
 
         //Registers the buttons for focus changes in order to update the ripple selector
-//        previousButton.setOnFocusChangeListener(buttonFocusChangeListener);
         rewindButton.setOnFocusChangeListener(buttonFocusChangeListener);
         playPauseButton.setOnFocusChangeListener(buttonFocusChangeListener);
         fastForwardButton.setOnFocusChangeListener(buttonFocusChangeListener);
-//        nextButton.setOnFocusChangeListener(buttonFocusChangeListener);
+        settingsButton.setOnFocusChangeListener(buttonFocusChangeListener);
     }
 
     @Override
@@ -215,22 +216,6 @@ public class VideoControllersSetupBox extends VideoControls {
         onVisibilityChanged();
     }
 
-//    @Override
-//    protected void updateTextContainerVisibility() {
-//        if (!isVisible) {
-//            return;
-//        }
-//
-//        boolean emptyText = isTextContainerEmpty();
-//        if (hideEmptyTextContainer && emptyText && textContainer.getVisibility() == VISIBLE) {
-//            textContainer.clearAnimation();
-//            textContainer.startAnimation(new BottomViewHideShowAnimation(textContainer, false, CONTROL_VISIBILITY_ANIMATION_LENGTH));
-//        } else if ((!hideEmptyTextContainer || !emptyText) && textContainer.getVisibility() != VISIBLE) {
-//            textContainer.clearAnimation();
-//            textContainer.startAnimation(new BottomViewHideShowAnimation(textContainer, true, CONTROL_VISIBILITY_ANIMATION_LENGTH));
-//        }
-//    }
-
     @Override
     public void showLoading(boolean initialLoad) {
         if (isLoading) {
@@ -238,7 +223,6 @@ public class VideoControllersSetupBox extends VideoControls {
         }
 
         isLoading = true;
-//        controlsContainer.setVisibility(View.GONE);
         rippleIndicator.setVisibility(View.GONE);
         loadingProgress.setVisibility(View.VISIBLE);
 
@@ -254,7 +238,6 @@ public class VideoControllersSetupBox extends VideoControls {
         isLoading = false;
         rippleIndicator.setVisibility(View.VISIBLE);
         loadingProgress.setVisibility(View.GONE);
-        playPauseButton.requestFocus();
 
         updatePlaybackState(videoView != null && videoView.isPlaying());
     }
@@ -314,8 +297,6 @@ public class VideoControllersSetupBox extends VideoControls {
 
         //Registers each button to make sure we catch the key events
         playPauseButton.setOnKeyListener(remoteKeyListener);
-//        previousButton.setOnKeyListener(remoteKeyListener);
-//        nextButton.setOnKeyListener(remoteKeyListener);
         rewindButton.setOnKeyListener(remoteKeyListener);
         fastForwardButton.setOnKeyListener(remoteKeyListener);
     }

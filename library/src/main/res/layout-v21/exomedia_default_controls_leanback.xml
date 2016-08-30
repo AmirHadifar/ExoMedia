@@ -68,8 +68,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="8dp"
-                    android:layout_toLeftOf="@+id/exomedia_controls_settings"
-                    android:layout_toStartOf="@+id/exomedia_controls_settings"
+                    android:layout_toLeftOf="@+id/exomedia_controls_settings_btn"
+                    android:layout_toStartOf="@+id/exomedia_controls_settings_btn"
                     android:paddingEnd="16dp"
                     android:paddingStart="16dp"
                     android:textColor="@android:color/white"
@@ -77,7 +77,7 @@
                     tools:text="1:23:49" />
 
                 <ImageButton
-                    android:id="@+id/exomedia_controls_settings"
+                    android:id="@+id/exomedia_controls_settings_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -128,7 +128,7 @@
                     android:background="@android:color/transparent"
                     android:minHeight="@dimen/exomedia_min_button_height"
                     android:minWidth="@dimen/exomedia_min_button_height"
-                    android:nextFocusLeft="@+id/exomedia_controls_settings"
+                    android:nextFocusLeft="@+id/exomedia_controls_settings_btn"
                     android:nextFocusRight="@+id/exomedia_controls_play_pause_btn"
                     android:src="@drawable/exomedia_ic_rewind_white"
                     android:visibility="visible"
@@ -172,7 +172,7 @@
                     android:minHeight="@dimen/exomedia_min_button_height"
                     android:minWidth="@dimen/exomedia_min_button_height"
                     android:nextFocusLeft="@id/exomedia_controls_play_pause_btn"
-                    android:nextFocusRight="@id/exomedia_controls_settings"
+                    android:nextFocusRight="@id/exomedia_controls_settings_btn"
                     android:src="@drawable/exomedia_ic_fast_forward_white"
                     android:visibility="visible"
                     tools:ignore="ContentDescription"

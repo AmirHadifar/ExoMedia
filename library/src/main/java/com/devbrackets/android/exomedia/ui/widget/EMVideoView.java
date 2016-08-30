@@ -637,7 +637,7 @@ public class EMVideoView extends RelativeLayout {
         //Updates the VideoControls if specified
         boolean useDefaultControls = typedArray.getBoolean(R.styleable.EMVideoView_useDefaultControls, false);
         if (useDefaultControls) {
-            setControls(deviceUtil.isDeviceTV(getContext()) ? new VideoControllersSetupBox(getContext()) : new VideoControlsMobile(getContext()));
+            setControls(deviceUtil.isDeviceStb(getContext()) ? new VideoControllersSetupBox(getContext()) : new VideoControlsMobile(getContext()));
         }
 
         typedArray.recycle();

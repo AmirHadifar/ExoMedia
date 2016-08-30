@@ -254,7 +254,6 @@ public class VideoControlsLeanback extends VideoControls {
         controlsContainer.setVisibility(View.VISIBLE);
         rippleIndicator.setVisibility(View.VISIBLE);
         loadingProgress.setVisibility(View.GONE);
-        playPauseButton.requestFocus();
 
         updatePlaybackState(videoView != null && videoView.isPlaying());
     }
