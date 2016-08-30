@@ -183,11 +183,11 @@ public class VideoControllersSetupBox extends VideoControls {
         });
 
         //Registers the buttons for focus changes in order to update the ripple selector
-        previousButton.setOnFocusChangeListener(buttonFocusChangeListener);
+//        previousButton.setOnFocusChangeListener(buttonFocusChangeListener);
         rewindButton.setOnFocusChangeListener(buttonFocusChangeListener);
         playPauseButton.setOnFocusChangeListener(buttonFocusChangeListener);
         fastForwardButton.setOnFocusChangeListener(buttonFocusChangeListener);
-        nextButton.setOnFocusChangeListener(buttonFocusChangeListener);
+//        nextButton.setOnFocusChangeListener(buttonFocusChangeListener);
     }
 
     @Override
@@ -252,9 +252,9 @@ public class VideoControllersSetupBox extends VideoControls {
         }
 
         isLoading = false;
-//        controlsContainer.setVisibility(View.VISIBLE);
         rippleIndicator.setVisibility(View.VISIBLE);
         loadingProgress.setVisibility(View.GONE);
+        playPauseButton.requestFocus();
 
         updatePlaybackState(videoView != null && videoView.isPlaying());
     }
@@ -314,8 +314,8 @@ public class VideoControllersSetupBox extends VideoControls {
 
         //Registers each button to make sure we catch the key events
         playPauseButton.setOnKeyListener(remoteKeyListener);
-        previousButton.setOnKeyListener(remoteKeyListener);
-        nextButton.setOnKeyListener(remoteKeyListener);
+//        previousButton.setOnKeyListener(remoteKeyListener);
+//        nextButton.setOnKeyListener(remoteKeyListener);
         rewindButton.setOnKeyListener(remoteKeyListener);
         fastForwardButton.setOnKeyListener(remoteKeyListener);
     }

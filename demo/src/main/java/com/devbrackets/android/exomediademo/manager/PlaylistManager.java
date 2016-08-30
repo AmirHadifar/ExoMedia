@@ -57,8 +57,8 @@ public class PlaylistManager extends ListPlaylistManager<MediaItem> {
 
         VideoControls videoControls = videoView.getVideoControls();
         if (videoControls != null) {
-            videoControls.setPreviousButtonRemoved(false);
-            videoControls.setNextButtonRemoved(false);
+//            videoControls.setPreviousButtonRemoved(false);
+//            videoControls.setNextButtonRemoved(false);
             videoControls.setButtonListener(new ControlsListener());
         }
     }

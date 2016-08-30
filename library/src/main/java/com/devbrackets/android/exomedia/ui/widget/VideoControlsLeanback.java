@@ -111,7 +111,7 @@ public class VideoControlsLeanback extends VideoControls {
 
     @Override
     public void updateProgress(@IntRange(from = 0) long position, @IntRange(from = 0) long duration, @IntRange(from = 0, to = 100) int bufferPercent) {
-        progressBar.setSecondaryProgress((int) (progressBar.getMax() * ((float)bufferPercent / 100)));
+        progressBar.setSecondaryProgress((int) (progressBar.getMax() * ((float) bufferPercent / 100)));
         progressBar.setProgress((int) position);
         currentTime.setText(TimeFormatUtil.formatMs(position));
     }
@@ -198,11 +198,11 @@ public class VideoControlsLeanback extends VideoControls {
         });
 
         //Registers the buttons for focus changes in order to update the ripple selector
-        previousButton.setOnFocusChangeListener(buttonFocusChangeListener);
+//        previousButton.setOnFocusChangeListener(buttonFocusChangeListener);
         rewindButton.setOnFocusChangeListener(buttonFocusChangeListener);
         playPauseButton.setOnFocusChangeListener(buttonFocusChangeListener);
         fastForwardButton.setOnFocusChangeListener(buttonFocusChangeListener);
-        nextButton.setOnFocusChangeListener(buttonFocusChangeListener);
+//        nextButton.setOnFocusChangeListener(buttonFocusChangeListener);
     }
 
     @Override
@@ -254,6 +254,7 @@ public class VideoControlsLeanback extends VideoControls {
         controlsContainer.setVisibility(View.VISIBLE);
         rippleIndicator.setVisibility(View.VISIBLE);
         loadingProgress.setVisibility(View.GONE);
+        playPauseButton.requestFocus();
 
         updatePlaybackState(videoView != null && videoView.isPlaying());
     }
@@ -313,8 +314,8 @@ public class VideoControlsLeanback extends VideoControls {
 
         //Registers each button to make sure we catch the key events
         playPauseButton.setOnKeyListener(remoteKeyListener);
-        previousButton.setOnKeyListener(remoteKeyListener);
-        nextButton.setOnKeyListener(remoteKeyListener);
+//        previousButton.setOnKeyListener(remoteKeyListener);
+//        nextButton.setOnKeyListener(remoteKeyListener);
         rewindButton.setOnKeyListener(remoteKeyListener);
         fastForwardButton.setOnKeyListener(remoteKeyListener);
     }

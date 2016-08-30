@@ -159,11 +159,11 @@ public class MediaService extends BasePlaylistService<MediaItem, PlaylistManager
             return;
         }
 
-        VideoControls videoControls = videoView.getVideoControls();
-        if (videoControls != null) {
+//        VideoControls videoControls = videoView.getVideoControls();
+//        if (videoControls != null) {
 //            updateVideoControlsText(videoControls);
-            updateVideoControlsButtons(videoControls);
-        }
+//            updateVideoControlsButtons(videoControls);
+//        }
     }
 
 //    private void updateVideoControlsText(@NonNull VideoControls videoControls) {
@@ -174,10 +174,10 @@ public class MediaService extends BasePlaylistService<MediaItem, PlaylistManager
 //        }
 //    }
 
-    private void updateVideoControlsButtons(@NonNull VideoControls videoControls) {
-        videoControls.setPreviousButtonEnabled(getPlaylistManager().isPreviousAvailable());
-        videoControls.setNextButtonEnabled(getPlaylistManager().isNextAvailable());
-    }
+//    private void updateVideoControlsButtons(@NonNull VideoControls videoControls) {
+//        videoControls.setPreviousButtonEnabled(getPlaylistManager().isPreviousAvailable());
+//        videoControls.setNextButtonEnabled(getPlaylistManager().isNextAvailable());
+//    }
 
     /**
      * A class used to listen to the loading of the large notification images and perform

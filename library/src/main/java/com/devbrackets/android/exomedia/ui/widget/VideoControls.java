@@ -62,8 +62,8 @@ public abstract class VideoControls extends RelativeLayout {
 //    protected TextView descriptionView;
 
     protected ImageButton playPauseButton;
-    protected ImageButton previousButton;
-    protected ImageButton nextButton;
+//    protected ImageButton previousButton;
+//    protected ImageButton nextButton;
 
     protected ProgressBar loadingProgress;
 
@@ -71,8 +71,8 @@ public abstract class VideoControls extends RelativeLayout {
 
     protected Drawable defaultPlayDrawable;
     protected Drawable defaultPauseDrawable;
-    protected Drawable defaultPreviousDrawable;
-    protected Drawable defaultNextDrawable;
+//    protected Drawable defaultPreviousDrawable;
+//    protected Drawable defaultNextDrawable;
 
     @NonNull
     protected Handler visibilityHandler = new Handler();
@@ -249,31 +249,31 @@ public abstract class VideoControls extends RelativeLayout {
         updatePlayPauseImage(videoView != null && videoView.isPlaying());
     }
 
-    /**
-     * Sets the state list drawable resource id to use for the Previous button.
-     *
-     * @param resourceId The resourceId or 0
-     */
-    public void setPreviousImageResource(@DrawableRes int resourceId) {
-        if (resourceId != 0) {
-            previousButton.setImageResource(resourceId);
-        } else {
-            previousButton.setImageDrawable(defaultPreviousDrawable);
-        }
-    }
-
-    /**
-     * Sets the state list drawable resource id to use for the Next button.
-     *
-     * @param resourceId The resourceId or 0
-     */
-    public void setNextImageResource(@DrawableRes int resourceId) {
-        if (resourceId != 0) {
-            nextButton.setImageResource(resourceId);
-        } else {
-            nextButton.setImageDrawable(defaultNextDrawable);
-        }
-    }
+//    /**
+//     * Sets the state list drawable resource id to use for the Previous button.
+//     *
+//     * @param resourceId The resourceId or 0
+//     */
+//    public void setPreviousImageResource(@DrawableRes int resourceId) {
+//        if (resourceId != 0) {
+//            previousButton.setImageResource(resourceId);
+//        } else {
+//            previousButton.setImageDrawable(defaultPreviousDrawable);
+//        }
+//    }
+//
+//    /**
+//     * Sets the state list drawable resource id to use for the Next button.
+//     *
+//     * @param resourceId The resourceId or 0
+//     */
+//    public void setNextImageResource(@DrawableRes int resourceId) {
+//        if (resourceId != 0) {
+//            nextButton.setImageResource(resourceId);
+//        } else {
+//            nextButton.setImageDrawable(defaultNextDrawable);
+//        }
+//    }
 
     /**
      * Sets the state list drawable resource id to use for the Rewind button.
@@ -316,33 +316,33 @@ public abstract class VideoControls extends RelativeLayout {
         }
     }
 
-    /**
-     * Sets the button state for the Previous button.  This will just
-     * change the images specified with {@link #setPreviousImageResource(int)},
-     * or use the defaults if they haven't been set, and block any click events.
-     * <p>
-     * This method will NOT re-add buttons that have previously been removed with
-     * {@link #setNextButtonRemoved(boolean)}.
-     *
-     * @param enabled If the Previous button is enabled [default: false]
-     */
-    public void setPreviousButtonEnabled(boolean enabled) {
-        previousButton.setEnabled(enabled);
-    }
-
-    /**
-     * Sets the button state for the Next button.  This will just
-     * change the images specified with {@link #setNextImageResource(int)},
-     * or use the defaults if they haven't been set, and block any click events.
-     * <p>
-     * This method will NOT re-add buttons that have previously been removed with
-     * {@link #setPreviousButtonRemoved(boolean)}.
-     *
-     * @param enabled If the Next button is enabled [default: false]
-     */
-    public void setNextButtonEnabled(boolean enabled) {
-        nextButton.setEnabled(enabled);
-    }
+//    /**
+//     * Sets the button state for the Previous button.  This will just
+//     * change the images specified with {@link #setPreviousImageResource(int)},
+//     * or use the defaults if they haven't been set, and block any click events.
+//     * <p>
+//     * This method will NOT re-add buttons that have previously been removed with
+//     * {@link #setNextButtonRemoved(boolean)}.
+//     *
+//     * @param enabled If the Previous button is enabled [default: false]
+//     */
+//    public void setPreviousButtonEnabled(boolean enabled) {
+//        previousButton.setEnabled(enabled);
+//    }
+//
+//    /**
+//     * Sets the button state for the Next button.  This will just
+//     * change the images specified with {@link #setNextImageResource(int)},
+//     * or use the defaults if they haven't been set, and block any click events.
+//     * <p>
+//     * This method will NOT re-add buttons that have previously been removed with
+//     * {@link #setPreviousButtonRemoved(boolean)}.
+//     *
+//     * @param enabled If the Next button is enabled [default: false]
+//     */
+//    public void setNextButtonEnabled(boolean enabled) {
+//        nextButton.setEnabled(enabled);
+//    }
 
     /**
      * Sets the button state for the Rewind button.  This will just
@@ -372,25 +372,25 @@ public abstract class VideoControls extends RelativeLayout {
         //Purposefully left blank
     }
 
-    /**
-     * Adds or removes the Previous button.  This will change the visibility
-     * of the button, if you want to change the enabled/disabled images see {@link #setPreviousButtonEnabled(boolean)}
-     *
-     * @param removed If the Previous button should be removed [default: true]
-     */
-    public void setPreviousButtonRemoved(boolean removed) {
-        previousButton.setVisibility(removed ? View.GONE : View.VISIBLE);
-    }
-
-    /**
-     * Adds or removes the Next button.  This will change the visibility
-     * of the button, if you want to change the enabled/disabled images see {@link #setNextButtonEnabled(boolean)}
-     *
-     * @param removed If the Next button should be removed [default: true]
-     */
-    public void setNextButtonRemoved(boolean removed) {
-        nextButton.setVisibility(removed ? View.GONE : View.VISIBLE);
-    }
+//    /**
+//     * Adds or removes the Previous button.  This will change the visibility
+//     * of the button, if you want to change the enabled/disabled images see {@link #setPreviousButtonEnabled(boolean)}
+//     *
+//     * @param removed If the Previous button should be removed [default: true]
+//     */
+//    public void setPreviousButtonRemoved(boolean removed) {
+//        previousButton.setVisibility(removed ? View.GONE : View.VISIBLE);
+//    }
+//
+//    /**
+//     * Adds or removes the Next button.  This will change the visibility
+//     * of the button, if you want to change the enabled/disabled images see {@link #setNextButtonEnabled(boolean)}
+//     *
+//     * @param removed If the Next button should be removed [default: true]
+//     */
+//    public void setNextButtonRemoved(boolean removed) {
+//        nextButton.setVisibility(removed ? View.GONE : View.VISIBLE);
+//    }
 
     /**
      * Adds or removes the Rewind button.  This will change the visibility
@@ -485,8 +485,8 @@ public abstract class VideoControls extends RelativeLayout {
         endTime = (TextView) findViewById(R.id.exomedia_controls_end_time);
 
         playPauseButton = (ImageButton) findViewById(R.id.exomedia_controls_play_pause_btn);
-        previousButton = (ImageButton) findViewById(R.id.exomedia_controls_previous_btn);
-        nextButton = (ImageButton) findViewById(R.id.exomedia_controls_next_btn);
+//        previousButton = (ImageButton) findViewById(R.id.exomedia_controls_previous_btn);
+//        nextButton = (ImageButton) findViewById(R.id.exomedia_controls_next_btn);
 
         loadingProgress = (ProgressBar) findViewById(R.id.exomedia_controls_video_loading);
 
@@ -504,18 +504,18 @@ public abstract class VideoControls extends RelativeLayout {
                 onPlayPauseClick();
             }
         });
-        previousButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onPreviousClick();
-            }
-        });
-        nextButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onNextClick();
-            }
-        });
+//        previousButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onPreviousClick();
+//            }
+//        });
+//        nextButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onNextClick();
+//            }
+//        });
     }
 
     /**
@@ -527,11 +527,11 @@ public abstract class VideoControls extends RelativeLayout {
         defaultPauseDrawable = EMResourceUtil.tintList(getContext(), R.drawable.exomedia_ic_pause_white, R.color.exomedia_default_controls_button_selector);
         playPauseButton.setImageDrawable(defaultPlayDrawable);
 
-        defaultPreviousDrawable = EMResourceUtil.tintList(getContext(), R.drawable.exomedia_ic_skip_previous_white, R.color.exomedia_default_controls_button_selector);
-        previousButton.setImageDrawable(defaultPreviousDrawable);
+//        defaultPreviousDrawable = EMResourceUtil.tintList(getContext(), R.drawable.exomedia_ic_skip_previous_white, R.color.exomedia_default_controls_button_selector);
+//        previousButton.setImageDrawable(defaultPreviousDrawable);
 
-        defaultNextDrawable = EMResourceUtil.tintList(getContext(), R.drawable.exomedia_ic_skip_next_white, R.color.exomedia_default_controls_button_selector);
-        nextButton.setImageDrawable(defaultNextDrawable);
+//        defaultNextDrawable = EMResourceUtil.tintList(getContext(), R.drawable.exomedia_ic_skip_next_white, R.color.exomedia_default_controls_button_selector);
+//        nextButton.setImageDrawable(defaultNextDrawable);
     }
 
     /**
