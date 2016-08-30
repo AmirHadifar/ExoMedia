@@ -98,16 +98,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/exomedia_leanback_controls_height">
 
-                <ImageView
-                    android:id="@+id/exomedia_controls_leanback_ripple"
-                    android:layout_width="@dimen/exomedia_leanback_ripple_selector_size"
-                    android:layout_height="@dimen/exomedia_leanback_controls_height"
-                    android:layout_centerHorizontal="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/exomedia_stb_ripple_selector"
-                    tools:ignore="ContentDescription" />
-
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/exomedia_leanback_controls_height"
@@ -206,6 +196,16 @@
                         tools:visibility="gone" />
 
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/exomedia_controls_leanback_ripple"
+                    android:layout_width="@dimen/exomedia_leanback_ripple_selector_size"
+                    android:layout_height="@dimen/exomedia_leanback_controls_height"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/exomedia_stb_ripple_selector"
+                    tools:ignore="ContentDescription" />
+
 
             </RelativeLayout>
 
