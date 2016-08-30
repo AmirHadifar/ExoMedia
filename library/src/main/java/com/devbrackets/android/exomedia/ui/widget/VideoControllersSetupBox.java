@@ -215,21 +215,21 @@ public class VideoControllersSetupBox extends VideoControls {
         onVisibilityChanged();
     }
 
-    @Override
-    protected void updateTextContainerVisibility() {
-        if (!isVisible) {
-            return;
-        }
-
-        boolean emptyText = isTextContainerEmpty();
-        if (hideEmptyTextContainer && emptyText && textContainer.getVisibility() == VISIBLE) {
-            textContainer.clearAnimation();
-            textContainer.startAnimation(new BottomViewHideShowAnimation(textContainer, false, CONTROL_VISIBILITY_ANIMATION_LENGTH));
-        } else if ((!hideEmptyTextContainer || !emptyText) && textContainer.getVisibility() != VISIBLE) {
-            textContainer.clearAnimation();
-            textContainer.startAnimation(new BottomViewHideShowAnimation(textContainer, true, CONTROL_VISIBILITY_ANIMATION_LENGTH));
-        }
-    }
+//    @Override
+//    protected void updateTextContainerVisibility() {
+//        if (!isVisible) {
+//            return;
+//        }
+//
+//        boolean emptyText = isTextContainerEmpty();
+//        if (hideEmptyTextContainer && emptyText && textContainer.getVisibility() == VISIBLE) {
+//            textContainer.clearAnimation();
+//            textContainer.startAnimation(new BottomViewHideShowAnimation(textContainer, false, CONTROL_VISIBILITY_ANIMATION_LENGTH));
+//        } else if ((!hideEmptyTextContainer || !emptyText) && textContainer.getVisibility() != VISIBLE) {
+//            textContainer.clearAnimation();
+//            textContainer.startAnimation(new BottomViewHideShowAnimation(textContainer, true, CONTROL_VISIBILITY_ANIMATION_LENGTH));
+//        }
+//    }
 
     @Override
     public void showLoading(boolean initialLoad) {
@@ -238,7 +238,7 @@ public class VideoControllersSetupBox extends VideoControls {
         }
 
         isLoading = true;
-        controlsContainer.setVisibility(View.GONE);
+//        controlsContainer.setVisibility(View.GONE);
         rippleIndicator.setVisibility(View.GONE);
         loadingProgress.setVisibility(View.VISIBLE);
 
@@ -252,7 +252,7 @@ public class VideoControllersSetupBox extends VideoControls {
         }
 
         isLoading = false;
-        controlsContainer.setVisibility(View.VISIBLE);
+//        controlsContainer.setVisibility(View.VISIBLE);
         rippleIndicator.setVisibility(View.VISIBLE);
         loadingProgress.setVisibility(View.GONE);
 

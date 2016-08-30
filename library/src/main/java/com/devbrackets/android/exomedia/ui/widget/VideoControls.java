@@ -57,9 +57,9 @@ public abstract class VideoControls extends RelativeLayout {
     protected TextView currentTime;
     protected TextView endTime;
 
-    protected TextView titleView;
-    protected TextView subTitleView;
-    protected TextView descriptionView;
+//    protected TextView titleView;
+//    protected TextView subTitleView;
+//    protected TextView descriptionView;
 
     protected ImageButton playPauseButton;
     protected ImageButton previousButton;
@@ -68,7 +68,6 @@ public abstract class VideoControls extends RelativeLayout {
     protected ProgressBar loadingProgress;
 
     protected ViewGroup controlsContainer;
-    protected ViewGroup textContainer;
 
     protected Drawable defaultPlayDrawable;
     protected Drawable defaultPauseDrawable;
@@ -145,7 +144,7 @@ public abstract class VideoControls extends RelativeLayout {
      * Update the current visibility of the text block independent of
      * the controls visibility
      */
-    protected abstract void updateTextContainerVisibility();
+//    protected abstract void updateTextContainerVisibility();
 
     /**
      * Update the controls to indicate that the video
@@ -235,39 +234,6 @@ public abstract class VideoControls extends RelativeLayout {
             progressPollRepeater.stop();
             show();
         }
-    }
-
-    /**
-     * Sets the title to display for the current item in playback
-     *
-     * @param title The title to display
-     */
-    public void setTitle(@Nullable CharSequence title) {
-        titleView.setText(title);
-        updateTextContainerVisibility();
-    }
-
-    /**
-     * Sets the subtitle to display for the current item in playback.  This will be displayed
-     * as the second line of text
-     *
-     * @param subTitle The sub title to display
-     */
-    public void setSubTitle(@Nullable CharSequence subTitle) {
-        subTitleView.setText(subTitle);
-        updateTextContainerVisibility();
-    }
-
-    /**
-     * Sets the description text to display for the current item in playback.  This will be displayed
-     * as the third line of text and unlike the {@link #setTitle(CharSequence)} and {@link #setSubTitle(CharSequence)}
-     * this text wont be limited to a single line of text
-     *
-     * @param description The artist to display
-     */
-    public void setDescription(@Nullable CharSequence description) {
-        descriptionView.setText(description);
-        updateTextContainerVisibility();
     }
 
     /**
@@ -506,10 +472,10 @@ public abstract class VideoControls extends RelativeLayout {
      *
      * @param hide If the empty text blocks can be hidden [default: true]
      */
-    public void setHideEmptyTextContainer(boolean hide) {
-        this.hideEmptyTextContainer = hide;
-        updateTextContainerVisibility();
-    }
+//    public void setHideEmptyTextContainer(boolean hide) {
+//        this.hideEmptyTextContainer = hide;
+//        updateTextContainerVisibility();
+//    }
 
     /**
      * Retrieves the view references from the xml layout
@@ -518,10 +484,6 @@ public abstract class VideoControls extends RelativeLayout {
         currentTime = (TextView) findViewById(R.id.exomedia_controls_current_time);
         endTime = (TextView) findViewById(R.id.exomedia_controls_end_time);
 
-        titleView = (TextView) findViewById(R.id.exomedia_controls_title);
-        subTitleView = (TextView) findViewById(R.id.exomedia_controls_sub_title);
-        descriptionView = (TextView) findViewById(R.id.exomedia_controls_description);
-
         playPauseButton = (ImageButton) findViewById(R.id.exomedia_controls_play_pause_btn);
         previousButton = (ImageButton) findViewById(R.id.exomedia_controls_previous_btn);
         nextButton = (ImageButton) findViewById(R.id.exomedia_controls_next_btn);
@@ -529,7 +491,6 @@ public abstract class VideoControls extends RelativeLayout {
         loadingProgress = (ProgressBar) findViewById(R.id.exomedia_controls_video_loading);
 
         controlsContainer = (ViewGroup) findViewById(R.id.exomedia_controls_interactive_container);
-        textContainer = (ViewGroup) findViewById(R.id.exomedia_controls_text_container);
     }
 
     /**
@@ -624,27 +585,6 @@ public abstract class VideoControls extends RelativeLayout {
                 updateProgress();
             }
         });
-    }
-
-    /**
-     * Determines if the <code>textContainer</code> doesn't have any text associated with it
-     * @return True if there is no text contained in the views in the <code>textContainer</code>
-     */
-    @SuppressWarnings("RedundantIfStatement")
-    protected boolean isTextContainerEmpty() {
-        if (titleView.getText() != null && titleView.getText().length() > 0) {
-            return false;
-        }
-
-        if (subTitleView.getText() != null && subTitleView.getText().length() > 0) {
-            return false;
-        }
-
-        if (descriptionView.getText() != null && descriptionView.getText().length() > 0) {
-            return false;
-        }
-
-        return true;
     }
 
     /**

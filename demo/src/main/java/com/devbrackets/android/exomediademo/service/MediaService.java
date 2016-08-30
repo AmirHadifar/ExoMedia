@@ -161,18 +161,18 @@ public class MediaService extends BasePlaylistService<MediaItem, PlaylistManager
 
         VideoControls videoControls = videoView.getVideoControls();
         if (videoControls != null) {
-            updateVideoControlsText(videoControls);
+//            updateVideoControlsText(videoControls);
             updateVideoControlsButtons(videoControls);
         }
     }
 
-    private void updateVideoControlsText(@NonNull VideoControls videoControls) {
-        if (currentPlaylistItem != null) {
-            videoControls.setTitle(currentPlaylistItem.getTitle());
-            videoControls.setSubTitle(currentPlaylistItem.getAlbum());
-            videoControls.setDescription(currentPlaylistItem.getArtist());
-        }
-    }
+//    private void updateVideoControlsText(@NonNull VideoControls videoControls) {
+//        if (currentPlaylistItem != null) {
+//            videoControls.setTitle(currentPlaylistItem.getTitle());
+//            videoControls.setSubTitle(currentPlaylistItem.getAlbum());
+//            videoControls.setDescription(currentPlaylistItem.getArtist());
+//        }
+//    }
 
     private void updateVideoControlsButtons(@NonNull VideoControls videoControls) {
         videoControls.setPreviousButtonEnabled(getPlaylistManager().isPreviousAvailable());

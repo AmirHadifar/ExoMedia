@@ -27,9 +27,8 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 
 import com.devbrackets.android.exomedia.R;
-import com.devbrackets.android.exomedia.util.TimeFormatUtil;
 import com.devbrackets.android.exomedia.ui.animation.BottomViewHideShowAnimation;
-import com.devbrackets.android.exomedia.ui.animation.TopViewHideShowAnimation;
+import com.devbrackets.android.exomedia.util.TimeFormatUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -155,10 +154,6 @@ public class VideoControlsMobile extends VideoControls {
             return;
         }
 
-        if (!hideEmptyTextContainer || !isTextContainerEmpty()) {
-            textContainer.startAnimation(new TopViewHideShowAnimation(textContainer, toVisible, CONTROL_VISIBILITY_ANIMATION_LENGTH));
-        }
-
         if (!isLoading) {
             controlsContainer.startAnimation(new BottomViewHideShowAnimation(controlsContainer, toVisible, CONTROL_VISIBILITY_ANIMATION_LENGTH));
         }
@@ -168,29 +163,12 @@ public class VideoControlsMobile extends VideoControls {
     }
 
     @Override
-    protected void updateTextContainerVisibility() {
-        if (!isVisible) {
-            return;
-        }
-
-        boolean emptyText = isTextContainerEmpty();
-        if (hideEmptyTextContainer && emptyText && textContainer.getVisibility() == VISIBLE) {
-            textContainer.clearAnimation();
-            textContainer.startAnimation(new TopViewHideShowAnimation(textContainer, false, CONTROL_VISIBILITY_ANIMATION_LENGTH));
-        } else if ((!hideEmptyTextContainer || !emptyText) && textContainer.getVisibility() != VISIBLE) {
-            textContainer.clearAnimation();
-            textContainer.startAnimation(new TopViewHideShowAnimation(textContainer, true, CONTROL_VISIBILITY_ANIMATION_LENGTH));
-        }
-    }
-
-    @Override
     public void showLoading(boolean initialLoad) {
         if (isLoading) {
             return;
         }
 
         isLoading = true;
-        controlsContainer.setVisibility(View.GONE);
         loadingProgress.setVisibility(View.VISIBLE);
 
         show();
@@ -203,7 +181,6 @@ public class VideoControlsMobile extends VideoControls {
         }
 
         isLoading = false;
-        controlsContainer.setVisibility(View.VISIBLE);
         loadingProgress.setVisibility(View.GONE);
 
         updatePlaybackState(videoView != null && videoView.isPlaying());
