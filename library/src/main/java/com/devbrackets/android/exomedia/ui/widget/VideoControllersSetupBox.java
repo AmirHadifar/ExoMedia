@@ -67,7 +67,6 @@ public class VideoControllersSetupBox extends VideoControls {
         super.setup(context);
         internalListener = new StbInternalListener();
         registerForInput();
-        setFocusable(true);
     }
 
     @Override
