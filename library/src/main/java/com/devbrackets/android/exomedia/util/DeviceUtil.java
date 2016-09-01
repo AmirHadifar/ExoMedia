@@ -44,7 +44,7 @@ public class DeviceUtil {
         }
 
         //Because Amazon Kindles are popular devices, we add a specific check for them
-        return Build.MANUFACTURER.equalsIgnoreCase("Amazon") && (isDeviceTV(context) || Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP);
+        return Build.MANUFACTURER.equalsIgnoreCase("Amazon") && (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP);
     }
 
     /**
@@ -76,21 +76,17 @@ public class DeviceUtil {
      * @param context The context to use for determining the device information
      * @return True if the current device is a TV
      */
-    public boolean isDeviceTV(Context context) {
-        //Since Android TV is only API 21+ that is the only time we will compare configurations
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            UiModeManager uiManager = (UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE);
-            return uiManager != null && uiManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
-        }
-        return false;
-    }
-
+//    public boolean isDeviceTV(Context context) {
+//        //Since Android TV is only API 21+ that is the only time we will compare configurations
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            UiModeManager uiManager = (UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE);
+//            return uiManager != null && uiManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
+//        }
+//        return false;
+//    }
     public boolean isDeviceStb(Context context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            final PackageManager pm = context.getPackageManager();
-            return pm.hasSystemFeature(PackageManager.FEATURE_TELEVISION);
-        }
-        return false;
+        final PackageManager pm = context.getPackageManager();
+        return pm.hasSystemFeature(PackageManager.FEATURE_TELEVISION);
     }
 
     public static class NonCompatibleDevice {
