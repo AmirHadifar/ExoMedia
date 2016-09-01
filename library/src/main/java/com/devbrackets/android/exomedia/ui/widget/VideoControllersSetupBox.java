@@ -67,6 +67,7 @@ public class VideoControllersSetupBox extends VideoControls {
         super.setup(context);
         internalListener = new StbInternalListener();
         registerForInput();
+        setFocusable(true);
     }
 
     @Override
@@ -185,9 +186,11 @@ public class VideoControllersSetupBox extends VideoControls {
         });
 
         //Registers the buttons for focus changes in order to update the ripple selector
+        previousButton.setOnFocusChangeListener(buttonFocusChangeListener);
         rewindButton.setOnFocusChangeListener(buttonFocusChangeListener);
         playPauseButton.setOnFocusChangeListener(buttonFocusChangeListener);
         fastForwardButton.setOnFocusChangeListener(buttonFocusChangeListener);
+        nextButton.setOnFocusChangeListener(buttonFocusChangeListener);
         settingsButton.setOnFocusChangeListener(buttonFocusChangeListener);
     }
 
@@ -298,6 +301,8 @@ public class VideoControllersSetupBox extends VideoControls {
 
         //Registers each button to make sure we catch the key events
         playPauseButton.setOnKeyListener(remoteKeyListener);
+        previousButton.setOnKeyListener(remoteKeyListener);
+        nextButton.setOnKeyListener(remoteKeyListener);
         rewindButton.setOnKeyListener(remoteKeyListener);
         fastForwardButton.setOnKeyListener(remoteKeyListener);
         settingsButton.setOnKeyListener(remoteKeyListener);
